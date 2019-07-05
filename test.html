@@ -12,6 +12,7 @@
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+			var vid = getUrlVars()["vid"];
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
       var player;
@@ -20,10 +21,10 @@
           //height: '390',
           //width: '640',
           //videoId: 'AI6RGgdyxtU',
-          videoId: 'yXcGj-ykG_M',
+          videoId: vid,
 					playerVars: {
 						controls: 1,
-						showinfo: 0,
+						showinfo: 1,
 						rel: 0,
 					},
           events: {
@@ -51,6 +52,14 @@
       function stopVideo() {
         player.stopVideo();
       }
+
+			function getUrlVars() {
+					var vars = {};
+					var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+							vars[key] = value;
+					});
+					return vars;
+			}
     </script>
   </body>
 </html>
