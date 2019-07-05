@@ -17,7 +17,7 @@
 	</style>
 
   <body style="background-color: #e3e3e3;">
-		<div id="log">0852,</div>
+		<div id="log">0858,</div>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 		<div class="video">
 			<div id="player"></div>
@@ -67,8 +67,8 @@
           //setTimeout(stopVideo, 6000);
           done = true;
         }
-				log.textContent = log.textContent + ", width:" + player.width();
 				log.textContent = log.textContent + ", " + event.data;
+				log.textContent = log.textContent + ", width:" + player.clientWidth;
 				/*
 				var isFull = player.fullScreen || player.mozFullScreen || player.webkitIsFullScreen;
 				if(isFull){
