@@ -97,6 +97,12 @@
           done = true;
         }
 				document.getElementById("log").textContent=document.getElementById("log").textContent + ", " + event.data;
+				var isFull = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+				if(isFull){
+					document.getElementById("log").textContent=document.getElementById("log").textContent + ", on";
+				}else{
+					document.getElementById("log").textContent=document.getElementById("log").textContent + ", off";
+				}
       }
       function stopVideo() {
         player.stopVideo();
