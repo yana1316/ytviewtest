@@ -23,6 +23,38 @@
 		</div>
 
     <script>
+			document.addEventListener("fullscreenchange", function() {
+				if (document.fullscreenElement) {
+					document.getElementById("log").textContent=document.getElementById("log").textContent + " on";
+				}else{
+					document.getElementById("log").textContent=document.getElementById("log").textContent + " off";
+				}
+			}, false);
+
+			document.addEventListener("msfullscreenchange", function() {
+				if (document.fullscreenElement) {
+					document.getElementById("log").textContent=document.getElementById("log").textContent + " on";
+				}else{
+					document.getElementById("log").textContent=document.getElementById("log").textContent + " off";
+				}
+			}, false);
+
+			document.addEventListener("mozfullscreenchange", function() {
+				if (document.fullscreenElement) {
+					document.getElementById("log").textContent=document.getElementById("log").textContent + " on";
+				}else{
+					document.getElementById("log").textContent=document.getElementById("log").textContent + " off";
+				}
+			}, false);
+
+			document.addEventListener("webkitfullscreenchange", function() {
+				if (document.fullscreenElement) {
+					document.getElementById("log").textContent=document.getElementById("log").textContent + " on";
+				}else{
+					document.getElementById("log").textContent=document.getElementById("log").textContent + " off";
+				}
+			}, false);
+
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
