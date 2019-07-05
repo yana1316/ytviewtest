@@ -15,6 +15,7 @@
 		height: 100%;
 	}
 	</style>
+
   <body style="background-color: #e3e3e3;">
 		<div id="log"></div>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
@@ -25,9 +26,7 @@
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
-			if (window.navigator.standalone) {
-				document.getElementById("log").textContent=document.getElementById("log").textContent + ", test";
-			}
+
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -73,6 +72,9 @@
 					document.getElementById("log").textContent=document.getElementById("log").textContent + ", on";
 				}else{
 					document.getElementById("log").textContent=document.getElementById("log").textContent + ", off";
+				}
+				if (window.navigator.standalone) {
+					document.getElementById("log").textContent=document.getElementById("log").textContent + ", test";
 				}
       }
       function stopVideo() {
