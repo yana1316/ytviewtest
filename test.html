@@ -96,7 +96,7 @@
           //setTimeout(stopVideo, 6000);
           done = true;
         }
-				document.getElementById("log").textContent=event.data;
+				document.getElementById("log").textContent=document.getElementById("log").textContent + " " + event.data;
       }
       function stopVideo() {
         player.stopVideo();
