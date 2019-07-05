@@ -17,7 +17,7 @@
 	</style>
 
   <body style="background-color: #e3e3e3;">
-		<div id="log">0800,</div>
+		<div id="log">0846,</div>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 		<div class="video">
 			<div id="player"></div>
@@ -73,9 +73,7 @@
 				}else{
 					document.getElementById("log").textContent=document.getElementById("log").textContent + ", off";
 				}
-				if (window.navigator.standalone) {
-					document.getElementById("log").textContent=document.getElementById("log").textContent + ", test";
-				}
+				document.getElementById("log").textContent=document.getElementById("log").textContent + ", " + document.getElementById("play").width();
       }
       function stopVideo() {
         player.stopVideo();
