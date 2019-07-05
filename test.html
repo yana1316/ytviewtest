@@ -17,7 +17,7 @@
 	</style>
 
   <body style="background-color: #e3e3e3;">
-		<div id="log">0849,</div>
+		<div id="log">0852,</div>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 		<div class="video">
 			<div id="player"></div>
@@ -61,21 +61,22 @@
       //    the player should play for six seconds and then stop.
       var done = false;
       function onPlayerStateChange(event) {
+				var log = document.getElementById("log");
+				var player = document.getElementById("player");
         if (event.data == YT.PlayerState.PLAYING && !done) {
           //setTimeout(stopVideo, 6000);
           done = true;
         }
-				document.getElementById("log").textContent=document.getElementById("log").textContent + ", " + event.data;
-				var player = document.getElementById("player");
-				var isFull = player.fullScreen || player.mozFullScreen || player.webkitIsFullScreen;
+				log.textContent = log.textContent + ", width:" + player.width();
+				log.textContent = log.textContent + ", " + event.data;
 				/*
+				var isFull = player.fullScreen || player.mozFullScreen || player.webkitIsFullScreen;
 				if(isFull){
-					document.getElementById("log").textContent=document.getElementById("log").textContent + ", on";
+					log.textContent = log.textContent + ", on";
 				}else{
-					document.getElementById("log").textContent=document.getElementById("log").textContent + ", off";
+					log.textContent = log.textContent + ", off";
 				}
 				*/
-				document.getElementById("log").textContent=document.getElementById("log").textContent + ", width:" + player.width();
       }
       function stopVideo() {
         player.stopVideo();
