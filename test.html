@@ -32,7 +32,7 @@
 			}, false);
 
 			document.addEventListener("msfullscreenchange", function() {
-				if (document.fullscreenElement) {
+				if (document.msFullscreenElement) {
 					document.getElementById("log").textContent=document.getElementById("log").textContent + ", on";
 				}else{
 					document.getElementById("log").textContent=document.getElementById("log").textContent + ", off";
@@ -40,7 +40,7 @@
 			}, false);
 
 			document.addEventListener("mozfullscreenchange", function() {
-				if (document.fullscreenElement) {
+				if (document.mozFullScreen) {
 					document.getElementById("log").textContent=document.getElementById("log").textContent + ", on";
 				}else{
 					document.getElementById("log").textContent=document.getElementById("log").textContent + ", off";
@@ -48,7 +48,7 @@
 			}, false);
 
 			document.addEventListener("webkitfullscreenchange", function() {
-				if (document.fullscreenElement) {
+				if (document.webkitIsFullScreen) {
 					document.getElementById("log").textContent=document.getElementById("log").textContent + ", on";
 				}else{
 					document.getElementById("log").textContent=document.getElementById("log").textContent + ", off";
