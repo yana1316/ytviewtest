@@ -17,7 +17,7 @@
 	</style>
 
   <body style="background-color: #e3e3e3;">
-		<div id="log">0858,</div>
+		<div id="log">0527,</div>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 		<div class="video">
 			<div id="player"></div>
@@ -39,10 +39,17 @@
         player = new YT.Player('player', {
           videoId: vid,
 					playerVars: {
-						controls: 1,
-						showinfo: 1,
+						controls: 0,
+            autoplay: 0,
+						showinfo: 0,
 						rel: 0,
             playsinline: 1,
+						enablejsapi: 1,
+						fs: 0,
+            origin: 'https://yana1316.github.io',
+						iv_load_policy: 3,
+						modestbranding: 1,
+						cc_load_policy: 0,
 					},
           events: {
             'onReady': onPlayerReady,
