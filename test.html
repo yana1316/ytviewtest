@@ -75,7 +75,6 @@
           done = true;
         }
 				log.textContent = log.textContent + ", " + event.data;
-				log.textContent = log.textContent + ", width:" + player.clientWidth;
 				/*
 				var isFull = player.fullScreen || player.mozFullScreen || player.webkitIsFullScreen;
 				if(isFull){
@@ -95,6 +94,11 @@
 							vars[key] = value;
 					});
 					return vars;
+			}
+
+			function testLog(){
+				var log = document.getElementById("log");
+				log.textContent = log.textContent + ", =*-*-*=";
 			}
     </script>
   </body>
