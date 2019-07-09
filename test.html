@@ -34,12 +34,12 @@
   <body style="background-color: #e3e3e3;">
     <input type="button" value="play" onclick="play()" />
     <span id="log">
-      play07,
+      play08,
     </span>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div class="video">
       <div id="player"></div>
-      <div id="playback"><p><img id="playback" src="playback.png" /></p></div>
+      <div id="playback"><p><img id="playbackimg" src="playback.png" /></p></div>
     </div>
 
     <script>
@@ -94,10 +94,10 @@
         if (event.data == YT.PlayerState.PLAYING && !done) {
           //setTimeout(stopVideo, 6000);
           done = true;
-          document.getElementById("playback").style.display = "none";
+          document.getElementById("playbackimg").style.display = "none";
         }
         if (event.data != YT.PlayerState.PLAYING) {
-          document.getElementById("playback").style.display = "initial";
+          document.getElementById("playbackimg").style.display = "inline";
         }
         log.textContent = log.textContent + ", " + event.data;
         /*
