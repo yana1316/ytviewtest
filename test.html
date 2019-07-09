@@ -16,9 +16,9 @@
   </style>
 
   <body style="background-color: #e3e3e3;">
-    <input type="button" value="run" onclick="testLog()" />
+    <input type="button" value="play" onclick="play()" />
     <span id="log">
-      0952,
+      play01,
     </span>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div class="video">
@@ -99,6 +99,11 @@
         });
         return vars;
       }
+
+			function play() {
+			  player.playVideo();
+		    return '';
+			}
 
       function testLog(){
         document.body.style.height = '1000%';
