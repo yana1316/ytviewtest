@@ -14,9 +14,6 @@
 		position: fixed;
 	}
   #playback {
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
     position: absolute;
     top: 0;
     left: 0;
@@ -25,17 +22,23 @@
     border: #ff0000 15px solid;
     pointer-events: none;
 	}
+  #playback p {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 0;
+	}
   </style>
 
   <body style="background-color: #e3e3e3;">
     <input type="button" value="play" onclick="play()" />
     <span id="log">
-      play04,
+      play05,
     </span>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div class="video">
       <div id="player"></div>
-      <div id="playback"><img src="playback.png" /></div>
+      <div id="playback"><p><img src="playback.png" /></p></div>
     </div>
 
     <script>
