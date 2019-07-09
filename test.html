@@ -91,9 +91,7 @@
       function onPlayerStateChange(event) {
         var log = document.getElementById("log");
         var player = document.getElementById("player");
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          //setTimeout(stopVideo, 6000);
-          done = true;
+        if (event.data == YT.PlayerState.PLAYING) {
           document.getElementById("playbackimg").style.display = "none";
         }
         if (event.data != YT.PlayerState.PLAYING) {
