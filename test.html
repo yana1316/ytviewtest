@@ -34,7 +34,7 @@
   <body style="background-color: #e3e3e3;">
     <input type="button" value="play" onclick="testLog()" />
     <span id="log">
-      play09,
+      play10,
     </span>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div class="video">
@@ -129,6 +129,11 @@
         document.body.style.width = '1000%';
         document.body.style.transform = 'scale(0.1)';
         document.body.style.transformOrigin = 'left top';
+        var playback = document.getElementById("playback");
+        playback.style.height = '1000%';
+        playback.style.width = '1000%';
+        playback.style.transform = 'scale(0.1)';
+        playback.style.transformOrigin = 'left top';
 				/*
         document.documentElement.style.height = '1000%';
         document.documentElement.style.width = '1000%';
