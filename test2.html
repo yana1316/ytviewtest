@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html>
-
+	<head>
+  <style type="text/css">
+  #playback {
+    display: table;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: #ff0000 15px solid;
+    pointer-events: none;
+  }
+  #playback p {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 0;
+    pointer-events: none;
+  }
+  </style>
+	</head>
   <body style="background-color: #e3e3e3;">
-		<span>i123</span>
+		<span>i124</span>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 		<div id="player"></div>
+		<div id="playback" onclick="play()"><p><img id="playbackimg" src="playback.png"/></p></div>
 
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
@@ -22,6 +43,9 @@
           videoId: '7swPsyMmmW4',
           height: '100%',
           width: '100%',
+          playerVars: {
+            enablejsapi: 1,
+          },
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
