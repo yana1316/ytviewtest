@@ -19,7 +19,7 @@
 		<input type="button" value="full" onClick="setFullScreen()" />
 		<input type="button" value="in" onClick="setInlineScreen()" />
 		-->
-		<span id="log">144</span>
+		<span id="log">145</span>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 		<div id="player"></div>
 
@@ -101,6 +101,11 @@
 				document.getElementById("player").width = "66%";
         isFullScreen = false;
 		    return '';
+			}
+
+			function seekTo(position, seekAhead) {
+					player.seekTo(position, seekAhead);
+					return '';
 			}
 
     </script>
