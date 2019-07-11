@@ -19,13 +19,14 @@
 		<input type="button" value="full" onClick="setFullScreen()" />
 		<input type="button" value="in" onClick="setInlineScreen()" />
 		-->
-		<span id="log">143</span>
+		<span id="log">144</span>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 		<div id="player"></div>
 
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
+      var isFullScreen = false;
 
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -46,7 +47,7 @@
           },
           events: {
             'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
+            'onStateChange': onPlayerStateChange,
           }
         });
       }
@@ -61,6 +62,9 @@
       //    the player should play for six seconds and then stop.
       var done = false;
       function onPlayerStateChange(event) {
+        if (event.data != YT.PlayerState.PLAYING && isFullScreen) {
+			    player.playVideo();
+        }
       }
       function stopVideo() {
         player.stopVideo();
@@ -87,6 +91,7 @@
 				var log = document.getElementById("log");
         //log.textContent = log.textContent + ", full";
 				document.getElementById("player").width = "100%";
+        isFullScreen = true;
 		    return '';
 			}
 
@@ -94,6 +99,7 @@
 				var log = document.getElementById("log");
         //log.textContent = log.textContent + ", in";
 				document.getElementById("player").width = "66%";
+        isFullScreen = false;
 		    return '';
 			}
 
