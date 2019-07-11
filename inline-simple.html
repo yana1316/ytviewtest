@@ -10,11 +10,12 @@
 			background-color: #e3e3e3;
 			overflow: hidden;
 			position: fixed;
+      text-align: center;
 		}
 	</style>
 	</head>
   <body>
-		<span id="log">on 137</span>
+		<span id="log">on 138</span>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 		<div id="player"></div>
 
@@ -33,6 +34,7 @@
         player = new YT.Player('player', {
           videoId: '7swPsyMmmW4',
           height: '100%',
+          width: '',
           playerVars: {
             controls: 1,
 						playsinline: 1,
