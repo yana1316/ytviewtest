@@ -15,7 +15,7 @@
 	</style>
 	</head>
   <body>
-		<span id="log">on 140</span>
+		<span id="log">141</span>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 		<div id="player"></div>
 
@@ -80,11 +80,15 @@
 			}
 
 			function setFullScreen() {
+				var log = document.getElementById("log");
+        log.textContent = log.textContent + ", full";
 				player.width = "100%";
 		    return '';
 			}
 
 			function setInlineScreen() {
+				var log = document.getElementById("log");
+        log.textContent = log.textContent + ", in";
 				player.width = "66%";
 		    return '';
 			}
