@@ -19,7 +19,7 @@
 		<input type="button" value="full" onClick="setFullScreen()" />
 		<input type="button" value="in" onClick="setInlineScreen()" />
 		-->
-		<span id="log">151</span>
+		<span id="log">152</span>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 		<div id="player"></div>
 
@@ -27,6 +27,8 @@
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
       var isFullScreen = false;
+      var timerId;
+      var player;
 
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -34,7 +36,6 @@
 
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
-      var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
           videoId: '7swPsyMmmW4',
