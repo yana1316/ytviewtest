@@ -45,10 +45,6 @@
 						playsinline: 1,
             fs: 0,
           },
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange,
-          }
 					events: {
 							onReady: function (event) { Ready.postMessage("Ready") },
 							onStateChange: function (event) { sendPlayerStateChange(event.data) },
