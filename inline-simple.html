@@ -77,8 +77,7 @@
 
 			function startSendCurrentTimeInterval() {
 					timerId = setInterval(function () {
-							document.getElementById("log").textContent = player.getCurrentTime();
-							CurrentTime.postMessage(player.videoId + ":" +player.getCurrentTime());
+							CurrentTime.postMessage(player.getCurrentTime());
 							LoadedFraction.postMessage(player.getVideoLoadedFraction());
 					}, 500);
 			}
