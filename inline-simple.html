@@ -19,7 +19,7 @@
 		<input type="button" value="full" onClick="setFullScreen()" />
 		<input type="button" value="in" onClick="setInlineScreen()" />
 		-->
-		<span id="log">155</span>
+		<span id="log">156</span>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 		<div id="player"></div>
 
@@ -59,7 +59,7 @@
 			function sendPlayerStateChange(playerState) {
 					var log = document.getElementById("log");
 					log.textContent = log.textContent + ", " +playerState;
-					clearTimeout(timerId);
+					//clearTimeout(timerId);
 					StateChange.postMessage(playerState);
 					if (playerState == 1) {
 							log.textContent = log.textContent + ", in1";
