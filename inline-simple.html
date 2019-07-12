@@ -18,8 +18,8 @@
 		<!--
 		<input type="button" value="full" onClick="setFullScreen()" />
 		<input type="button" value="in" onClick="setInlineScreen()" />
-		-->
 		<span id="log">158</span>
+		-->
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 		<div id="player"></div>
 
@@ -124,7 +124,7 @@
 			}
 
 			function setFullScreen() {
-				var log = document.getElementById("log");
+				//var log = document.getElementById("log");
         //log.textContent = log.textContent + ", full";
 				document.getElementById("player").width = "100%";
         isFullScreen = true;
@@ -132,7 +132,7 @@
 			}
 
 			function setInlineScreen() {
-				var log = document.getElementById("log");
+				//var log = document.getElementById("log");
         //log.textContent = log.textContent + ", in";
 				document.getElementById("player").width = "66%";
         isFullScreen = false;
