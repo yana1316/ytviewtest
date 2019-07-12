@@ -19,7 +19,7 @@
 		<input type="button" value="full" onClick="setFullScreen()" />
 		<input type="button" value="in" onClick="setInlineScreen()" />
 		-->
-		<span id="log">150</span>
+		<span id="log">151</span>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 		<div id="player"></div>
 
@@ -46,7 +46,7 @@
             fs: 0,
           },
 					events: {
-							onReady: function (event) { Ready.postMessage("Ready") },
+							onReady: function (event) { Ready.postMessage("Ready"); },
 							onStateChange: function (event) { sendPlayerStateChange(event.data) },
 							onPlaybackQualityChange: function (event) { PlaybackQualityChange.postMessage(event.data) },
 							onPlaybackRateChange: function (event) { PlaybackRateChange.postMessage(event.data) },
@@ -76,6 +76,8 @@
 
 			function startSendCurrentTimeInterval() {
 					timerId = setInterval(function () {
+							var log = document.getElementById("log");
+							log.textContent = player.getCurrentTime();
 							CurrentTime.postMessage(player.getCurrentTime());
 							LoadedFraction.postMessage(player.getVideoLoadedFraction());
 					}, 100);
