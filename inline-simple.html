@@ -19,7 +19,7 @@
 		<input type="button" value="full" onClick="setFullScreen()" />
 		<input type="button" value="in" onClick="setInlineScreen()" />
 		-->
-		<span id="log">153</span>
+		<span id="log">154</span>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 		<div id="player"></div>
 
@@ -78,6 +78,8 @@
 			}
 
 			function startSendCurrentTimeInterval() {
+					var log = document.getElementById("log");
+					log.textContent = log.textContent + ", in";
 					timerId = setInterval(function () {
 							var log = document.getElementById("log");
 							log.textContent = log.textContent + ", " +player.getCurrentTime();
