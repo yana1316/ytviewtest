@@ -57,12 +57,9 @@
       }
 
 			function sendPlayerStateChange(playerState) {
-					var log = document.getElementById("log");
-					log.textContent = log.textContent + ", " +playerState;
 					//clearTimeout(timerId);
 					StateChange.postMessage(playerState);
 					if (playerState == 1) {
-							log.textContent = log.textContent + ", in1";
 							startSendCurrentTimeInterval();
 							sendVideoData(player);
 					}
@@ -79,11 +76,7 @@
 			}
 
 			function startSendCurrentTimeInterval() {
-					var log = document.getElementById("log");
-					log.textContent = log.textContent + ", in2";
 					timerId = setInterval(function () {
-							var log = document.getElementById("log");
-							log.textContent = log.textContent + ", " +player.getCurrentTime();
 							CurrentTime.postMessage(player.getCurrentTime());
 							LoadedFraction.postMessage(player.getVideoLoadedFraction());
 					}, 100);
